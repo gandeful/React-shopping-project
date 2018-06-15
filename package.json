@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.2.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "react": "^16.4.1",

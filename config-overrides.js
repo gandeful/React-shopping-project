@@ -42,13 +42,29 @@ module.exports = function override(config, env) {
         {
           loader: require.resolve('less-loader'),
           options: {
-            // theme vars, also can use theme.js instead of this.
-            modifyVars: { "@brand-primary": "#1DA57A" },
+            
           },
         },
       ]
     }
   );
+  config.module.rules[1].oneOf.unshift({
+    test: /\.less$/,
+    exclude: [/node_modules/],
+    use: [
+      require.resolve('style-loader'),
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          modules: true,
+          localIndexName: "[name]__[local]___[hash:base64:5]"
+        },
+      },
+      {
+        loader: require.resolve('less-loader'), // compiles Less to CSS
+      },
+    ],
+  })
 
   // css-modules
   config.module.rules[1].oneOf.unshift(
