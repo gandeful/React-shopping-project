@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './App.less';
+import styles from './styles.less';
 import { NavBar, Flex,WhiteSpace,WingBlank ,Grid} from 'antd-mobile';
 
 
@@ -38,8 +38,13 @@ const data = [
         text:'报表'
     }
 ];
-class App extends Component {
+
+class Index extends Component {
+    onGridItemClick= (el,index) =>{
+        console.log(el);
+    }
   render() {
+
     const arr =[
       ['交易时间','交易笔数','交易金额'],
       ['昨日','100','100000'],
@@ -47,7 +52,7 @@ class App extends Component {
     ]
 
     return (
-      
+
       <div className={styles.app}>
       <NavBar
       mode="light"
@@ -59,7 +64,7 @@ class App extends Component {
       {
         arr.map((v,i)=>(renderRow(i,...v)))
       }
-          <Grid className={styles.grid} data={data} activeStyle={false} columnNum={3} />
+          <Grid className={styles.grid} data={data} onClick={this.onGridItemClick} activeStyle={false} columnNum={3} />
       </div>
         
       
@@ -68,4 +73,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Index;
