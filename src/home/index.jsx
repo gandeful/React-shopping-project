@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.less';
 import { NavBar, Flex,WhiteSpace,WingBlank ,Grid} from 'antd-mobile';
+import { Link } from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ const icon = 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.pn
 const data = [
     {
         icon,
-        text:'销售'
+        text:<Link to={'/sale'}>销售</Link>
     },{
         icon,
         text:'采购'
@@ -39,7 +40,7 @@ const data = [
     }
 ];
 
-class Index extends Component {
+class Home extends Component {
     onGridItemClick= (el,index) =>{
         console.log(el);
     }
@@ -64,7 +65,8 @@ class Index extends Component {
       {
         arr.map((v,i)=>(renderRow(i,...v)))
       }
-          <Grid className={styles.grid} data={data} onClick={this.onGridItemClick} activeStyle={false} columnNum={3} />
+      <Grid className={styles.grid} data={data} onClick={this.onGridItemClick} activeStyle={false} columnNum={3} />
+          <Link to={'/sale'}>销售</Link>
       </div>
         
       
@@ -73,4 +75,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default Home;
