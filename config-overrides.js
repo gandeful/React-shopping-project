@@ -42,7 +42,7 @@ module.exports = function override(config, env) {
         {
           loader: require.resolve('less-loader'),
           options: {
-            
+            javascriptEnabled:true
           },
         },
       ]
