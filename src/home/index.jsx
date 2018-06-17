@@ -66,7 +66,7 @@ class Home extends Component {
         arr.map((v,i)=>(renderRow(i,...v)))
       }
       <Grid className={styles.grid} data={data} onClick={this.onGridItemClick} activeStyle={false} columnNum={3} />
-          <Link to={'/sale'}>销售</Link>
+
       </div>
         
       
