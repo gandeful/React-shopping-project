@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c197aa2d-3abf-4e64-8409-08a39e992833" name="默认" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sale/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account/login/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/axiosConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/axiosConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,8 +46,11 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="22">
+              <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +58,8 @@
       <file leaf-file-name="axiosConfig.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network/axiosConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+            <state relative-caret-position="88">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -75,8 +76,8 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/account/login/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="132">
+              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -129,12 +130,12 @@
         <option value="$PROJECT_DIR$/src/sale/index.js" />
         <option value="$PROJECT_DIR$/src/sale/index.jsx" />
         <option value="$PROJECT_DIR$/src/login/index.jsx" />
-        <option value="$PROJECT_DIR$/src/network/axiosConfig.js" />
         <option value="$PROJECT_DIR$/src/home/index.jsx" />
         <option value="$PROJECT_DIR$/src/app.jsx" />
         <option value="$PROJECT_DIR$/src/network/apiMap.js" />
-        <option value="$PROJECT_DIR$/src/account/login/index.jsx" />
+        <option value="$PROJECT_DIR$/src/network/axiosConfig.js" />
         <option value="$PROJECT_DIR$/src/network/index.js" />
+        <option value="$PROJECT_DIR$/src/account/login/index.jsx" />
       </list>
     </option>
   </component>
@@ -155,10 +156,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="454" />
-    <option name="y" value="77" />
+    <option name="x" value="599" />
+    <option name="y" value="84" />
     <option name="width" value="949" />
-    <option name="height" value="626" />
+    <option name="height" value="620" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="添加" />
@@ -249,15 +250,15 @@
       <updated>1529156002628</updated>
       <workItem from="1529156006209" duration="7335000" />
       <workItem from="1529245293520" duration="326000" />
-      <workItem from="1529245637385" duration="3326000" />
+      <workItem from="1529245637385" duration="5995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10987000" />
+    <option name="totallyTimeSpent" value="13656000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="454" y="77" width="949" height="626" extended-state="0" />
+    <frame x="599" y="84" width="949" height="620" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25356752" />
@@ -269,7 +270,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32854208" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33264032" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -464,22 +465,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/network/axiosConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="88">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/network/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        <state relative-caret-position="22">
+          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/account/login/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="132">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
