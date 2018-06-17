@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import http from '../../network';
 import {authenticate} from "../../network/apiMap";
 import { Toast }  from 'antd-mobile';
+import {save ,auth} from '../../utils/storage';
 
 class Login extends Component {
     request =() =>(
@@ -12,6 +13,7 @@ class Login extends Component {
          roleId:'1'
      })
          .then((data)=>{
+             save(auth,data);
              Toast.success('登录成功',1,()=>{
                  this.props.history.push('/home')
              })

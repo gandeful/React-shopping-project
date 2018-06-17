@@ -15,7 +15,7 @@ axios.interceptors.response.use((response)=>{
     if(error){
         Toast.fail(error.message);
     }
-    return response;
+    return response.data.result;
 },(error)=>{
 
     Toast.fail(error.response.data.error.message);
