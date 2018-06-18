@@ -1,5 +1,5 @@
 const { injectBabelPlugin, getLoader } = require('react-app-rewired');
-
+const path = require('path');
 const fileLoaderMatcher = function (rule) {
   return rule.loader && rule.loader.indexOf(`file-loader`) != -1;
 }
@@ -48,6 +48,7 @@ module.exports = function override(config, env) {
       ]
     }
   );
+
   config.module.rules[1].oneOf.unshift({
     test: /\.less$/,
     exclude: [/node_modules/],
@@ -108,6 +109,6 @@ module.exports = function override(config, env) {
   // file-loader exclude
   let l = getLoader(config.module.rules, fileLoaderMatcher);
   l.exclude.push(/\.less$/);
-
+  config.resolve.alias['@'] = path.resolve(__dirname,'src');
   return config;
 };
