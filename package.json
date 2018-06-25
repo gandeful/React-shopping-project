@@ -8,6 +8,7 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "prop-types": "^15.6.1",
+    "rc-form": "^2.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",

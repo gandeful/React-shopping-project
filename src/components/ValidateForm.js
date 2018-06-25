@@ -1,18 +1,31 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {List,Button,InputItem} from 'antd-mobile';
+import { createForm } from 'rc-form';
+
 
 class ValidateForm extends Component {
+    submit = () => {
+        this.props.form.validateFields((error, value) => {
+            console.log(error, value);
+        });
+    };
+
     render() {
-        const {parmas} =this.props;
+        const {ButtonParmas,InputParmas} =this.props;
+        const { getFieldProps, getFieldError } = this.props.form;
         return (
 
             <div>
                 <List>
                     {
-                        parmas.InputParmas.map((v,index) => {
+                        InputParmas.map((v,index) => {
                             return <InputItem
-                                index={index}
+                                key={index}
+                                {...getFieldProps(v.field, {
+                                    onChange(){}, // have to write original onChange here if you need
+                                    rules: [{required: true}],
+                                })}
                                 placeholder={v.placeholder}
                                 clear={v.clear}
                             >
@@ -20,8 +33,9 @@ class ValidateForm extends Component {
                             </InputItem>
                         })
                     }
+                    {/*parmas.ButtonParmas.onClick*/}
                     <List.Item>
-                        <Button type={parmas.ButtonParmas.type} onClick={parmas.ButtonParmas.onClick}>{parmas.ButtonParmas.label}</Button>
+                        <Button type={ButtonParmas.type} onClick={ButtonParmas.onClick}>{ButtonParmas.label}</Button>
                     </List.Item>
                 </List>
             </div>
@@ -31,4 +45,4 @@ class ValidateForm extends Component {
 
 ValidateForm.propTypes = {};
 
-export default ValidateForm;
+export default createForm()(ValidateForm);
