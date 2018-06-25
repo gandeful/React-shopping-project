@@ -6,6 +6,8 @@ import {save ,auth} from '@/utils/storage';
 import ValidateForm from '@/components/ValidateForm';
 import  SVGIcon  from '@/components/SVGicon';
 import {success} from "@/utils/toastUtils";
+import Number from "@/components/Number";
+
 
 class Login extends Component {
     login =() =>(
@@ -25,12 +27,15 @@ class Login extends Component {
     render(){
         const InputParmas = [
             {
+                //设置表单提交字段
+                name:'账号',
                 placeholder: '请输入手机号',
                 clear:true,
                 label: <SVGIcon iconName='icon-phone1'/>,
                 field:'usernameOrEmailAddress'
             },
             {
+                name:'密码',
                 placeholder:'请输入密码',
                 clear:true,
                 label: <SVGIcon iconName='icon-unie65b' />,
@@ -45,6 +50,7 @@ class Login extends Component {
         return(
             <div>
                 <ValidateForm  ButtonParmas = {ButtonParmas} InputParmas={InputParmas} />
+                <Number />
             </div>
         )
     }
