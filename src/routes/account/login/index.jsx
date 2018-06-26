@@ -16,10 +16,10 @@ class Login extends Component {
          roleId:'1'
      })
          .then((data)=>{
-             save(auth,data);
+             save(auth,"Bearer "+data);
              success('登录成功')
          }).then(()=>(
-             this.props.history.push('/home')
+             this.props.history.push('/home/shop')
          )
      )
     )

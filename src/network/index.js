@@ -1,8 +1,10 @@
 import axios from './axiosConfig';
 import {Toast} from 'antd-mobile'
+import {auth, restore} from "../utils/storage";
 //请求前
 axios.interceptors.request.use((config)=>{
     Toast.loading('加载中,请稍后', 0);
+    config.headers[auth.key] = restore(auth);
     return config;
 },(error)=>{
     Toast.offline('网络异常')

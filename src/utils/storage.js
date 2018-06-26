@@ -1,6 +1,6 @@
 export const auth = {
     type :'session',
-    key :'authenticate'
+    key :'Authorization'
 };
 //保存数据
 export const save = (obj,value)=>{
@@ -16,9 +16,9 @@ export const save = (obj,value)=>{
 export const restore = (obj) => {
     const { type,key } = obj;
     if(type ==='local'){
-        localStorage.getItem(key);
+        return JSON.parse(localStorage.getItem(key));
 
     }else {
-        sessionStorage.getItem(key);
+        return JSON.parse(sessionStorage.getItem(key));
     }
 };

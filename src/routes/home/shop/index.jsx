@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Flex , Grid , WingBlank ,WhiteSpace,NavBar } from 'antd-mobile';
 import styles  from './styles.less';
+import {postShopSaleSumReport} from "../../../network/apiMap";
+import http from '@/network/index';
 
 const renderRow = (key,left,center,right) =>(
     <div key={key}>
@@ -39,13 +41,35 @@ const data = [
 ];
 
 class Shop extends Component {
-    
+    constructor(props) {
+        super(props);
+       this.state = {
+           homeInfo:{
+               totalCount: 0,
+               totalAmount: 0,
+               preTotalCount: 0,
+               preTotalAmount: 0
+           }
+       }
+
+}
+    componentDidMount(){
+        http(postShopSaleSumReport)
+            .then((data)=>{
+                console.log(data)
+            this.setState({
+                homeInfo:data
+            })
+        })
+    }
     render() {
+        const {homeInfo}=this.state
+        const {totalCount, totalAmount, preTotalCount, preTotalAmount}=homeInfo
         const arr =[
             ['交易时间','交易笔数','交易金额'],
-            ['昨日','100','100000'],
-            ['今日','100','10000'],
-        ]
+            ['昨日',preTotalCount,preTotalAmount],
+            ['今日',totalCount,totalAmount],
+        ];
         return (
             <div>
                 <div className={styles.app}>
