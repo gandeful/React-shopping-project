@@ -1,45 +1,12 @@
 import React, { Component } from 'react';
-import styles from './styles.less';
-import { NavBar, Flex,WhiteSpace,WingBlank ,Grid} from 'antd-mobile';
-import { Link } from "react-router-dom";
+import styles from './shop/styles.less';
+import {  Route ,withRouter } from "react-router-dom";
 import { TabBar } from 'antd-mobile';
+import My from './my';
+import Purchase from './purchase';
+import Shop from './shop';
+import ShopCart from './shopcart';
 
-
-
-const renderRow = (key,left,center,right) =>(
-  <div key={key}>
-<WhiteSpace size="sm" />
-<WingBlank size="lg">
-  <Flex >
-  <Flex.Item>{left}</Flex.Item>
-  <Flex.Item  className='text-center'>{center}</Flex.Item>
-  <Flex.Item  className='text-right'>{right}</Flex.Item>
-</Flex>
-</WingBlank>
-  </div>
-)
-const icon = 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png';
-const data = [
-    {
-        icon,
-        text:<Link to={'/sale'}>销售</Link>
-    },{
-        icon,
-        text:'采购'
-    },{
-        icon,
-        text:'入库'
-    },{
-        icon,
-        text:'商品管理'
-    },{
-        icon,
-        text:'库存管理'
-    },{
-        icon,
-        text:'报表'
-    }
-];
 
 class Home extends Component {
     constructor(props) {
@@ -50,46 +17,64 @@ class Home extends Component {
             fullScreen: false,
         };
     };
-    renderContent(pageText) {
-        return (
-            <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-                <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-                <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
-                   onClick={(e) => {
-                       e.preventDefault();
-                       this.setState({
-                           hidden: !this.state.hidden,
-                       });
-                   }}
-                >
-                    Click to show/hide tab-bar
-                </a>
-                <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-                   onClick={(e) => {
-                       e.preventDefault();
-                       this.setState({
-                           fullScreen: !this.state.fullScreen,
-                       });
-                   }}
-                >
-                    Click to switch fullscreen
-                </a>
-            </div>
-        );
-    }
 
 
-    onGridItemClick= (el,index) =>{
-        console.log(el);
-    };
     render() {
+        const tabParmas=[
+            {
+                title:'店铺',
+                key:'shop',
+                icon:<div style={{
+                width: '22px',
+                height: '22px',
+                background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+            />,
+                selectedIcon:<div style={{
+                width: '22px',
+                height: '22px',
+                background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+            />,
+                component:Shop
 
-    const arr =[
-      ['交易时间','交易笔数','交易金额'],
-      ['昨日','100','100000'],
-      ['今日','100','10000'],
-    ]
+            },
+            {
+                title:'采购',
+                key:'purchase',
+                icon:<div style={{
+                    width: '22px',
+                    height: '22px',
+                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                />,
+                selectedIcon:<div style={{
+                    width: '22px',
+                    height: '22px',
+                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                />,
+                component:Purchase
 
+            },{
+                title:'购物车',
+                key:'shopcart',
+                icon:<div style={{
+                    width: '22px',
+                    height: '22px',
+                    background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                />,
+                selectedIcon:  <div style={{
+                    width: '22px',
+                    height: '22px',
+                    background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                />,
+                component:ShopCart
+            },
+            {
+                title:'我的',
+                key:'my',
+                icon:{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' },
+                selectedIcon:{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' },
+                component:My
+            },
+        ]
 
     return (
 
@@ -100,120 +85,28 @@ class Home extends Component {
               barTintColor="white"
               hidden={this.state.hidden}
           >
-              <TabBar.Item
-                  title="Life"
-                  key="Life"
-                  icon={<div style={{
-                      width: '22px',
-                      height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-                  />
-                  }
-                  selectedIcon={<div style={{
-                      width: '22px',
-                      height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-                  />
-                  }
-                  selected={this.state.selectedTab === 'blueTab'}
-                  badge={1}
-                  onPress={() => {
-                      this.setState({
-                          selectedTab: 'blueTab',
-                      });
-                  }}
-                  data-seed="logId"
-              >
-                  <div className={styles.app}>
-                  <NavBar
-                      mode="light"
-                  >酒店名称</NavBar>
-                  <WhiteSpace size="lg" />
-                  <WingBlank size="lg">
-                      交易汇总
-                  </WingBlank>
-                  {
-                      arr.map((v,i)=>(renderRow(i,...v)))
-                  }
-                  <Grid className={styles.grid} data={data} onClick={this.onGridItemClick} activeStyle={false} columnNum={3} />
-                  </div>
-              </TabBar.Item>
-              <TabBar.Item
-                  icon={
-                      <div style={{
-                          width: '22px',
-                          height: '22px',
-                          background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-                      />
-                  }
-                  selectedIcon={
-                      <div style={{
-                          width: '22px',
-                          height: '22px',
-                          background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-                      />
-                  }
-                  title="Koubei"
-                  key="Koubei"
-                  badge={'new'}
-                  selected={this.state.selectedTab === 'redTab'}
-                  onPress={() => {
-                      this.setState({
-                          selectedTab: 'redTab',
-                      });
-                  }}
-                  data-seed="logId1"
-              >
-                  {this.renderContent('Koubei')}
-              </TabBar.Item>
-              <TabBar.Item
-                  icon={
-                      <div style={{
-                          width: '22px',
-                          height: '22px',
-                          background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-                      />
-                  }
-                  selectedIcon={
-                      <div style={{
-                          width: '22px',
-                          height: '22px',
-                          background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-                      />
-                  }
-                  title="Friend"
-                  key="Friend"
-                  dot
-                  selected={this.state.selectedTab === 'greenTab'}
-                  onPress={() => {
-                      this.setState({
-                          selectedTab: 'greenTab',
-                      });
-                  }}
-              >
-                  {this.renderContent('Friend')}
-              </TabBar.Item>
-              <TabBar.Item
-                  icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-                  selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-                  title="My"
-                  key="my"
-                  selected={this.state.selectedTab === 'yellowTab'}
-                  onPress={() => {
-                      this.setState({
-                          selectedTab: 'yellowTab',
-                      });
-                  }}
-              >
-                  {this.renderContent('My')}
-              </TabBar.Item>
+              {
+                  tabParmas.map((v)=>{
+                      return <TabBar.Item
+                          icon={v.icon}
+                          selectedIcon={v.selectedIcon}
+                          title={v.title}
+                          key={v.key}
+                          selected={window.location.pathname === `/home/${v.key}`}
+                          onPress={() => {
+                              this.props.history.push(`/home/${v.key}`)
+                          }}
+                      >
+                          <Route path={`/home/${v.key}`} component={v.component} />
+                      </TabBar.Item>
+                  })
+              }
+
           </TabBar>
 
-        
-      
-      
+
     );
   }
 }
 
-export default Home;
+export default withRouter(Home);
