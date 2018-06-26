@@ -11,19 +11,31 @@ class ValidateForm extends Component {
         super(props);
         const error = {};
         this.state={
-            error
+            error,
+            disabled:false
         };
     }
-    submit = () => {
+    validate = (fn) =>{
         this.props.form.validateFields((error, value) => {
+            if(!error && fn){
+                fn(value);
+                return;
+            }
             const newError = {};
             for (let key in error){
                 newError[key] = error[key].errors[0].message;
             }
 
             this.setState({
-                error:newError
+                error:newError,
+                disabled:!!error
             })
+        });
+    }
+    submit = () => {
+        this.validate((value)=>{
+            const {onSumbit}=this.props;
+            onSumbit(value);
         });
     };
     onErrorClick = (field)=>{
@@ -33,12 +45,14 @@ class ValidateForm extends Component {
         fail(message)
 
     }
+    inputChange = () =>{
+       this.validate();
+    }
 
     render() {
-        const {error} = this.state;
+        const { error, disabled } = this.state;
         const {ButtonParmas,InputParmas} =this.props;
         const { getFieldProps} = this.props.form;
-        const disabled = Object.keys(error) && Object.keys(error).length !=0;
         return (
 
             <div>
@@ -52,7 +66,8 @@ class ValidateForm extends Component {
                             return (<InputItem
                                 key={index}
                                 {...getFieldProps(v.field, {
-                                    rules: [{required: true, message: v.name +'为空了'}]
+                                    onChange:this.inputChange,
+                                    rules: v.rules
                                 })}
                                 placeholder={v.placeholder}
                                 error = {hasError}

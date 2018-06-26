@@ -10,10 +10,9 @@ import Number from "@/components/Number";
 
 
 class Login extends Component {
-    login =() =>(
+    login =(value) =>(
      http(authenticate,{
-         usernameOrEmailAddress:'13590491852',
-         password:'123456',
+         ...value,
          roleId:'1'
      })
          .then((data)=>{
@@ -32,14 +31,23 @@ class Login extends Component {
                 placeholder: '请输入手机号',
                 clear:true,
                 label: <SVGIcon iconName='icon-phone1'/>,
-                field:'usernameOrEmailAddress'
+                field:'usernameOrEmailAddress',
+                rules:[
+                    {required: true, message: '请输入账号'},
+                    {pattern: /^\w{4,12}$/,message:'账号格式错误'}
+                ]
+
             },
             {
                 name:'密码',
                 placeholder:'请输入密码',
                 clear:true,
                 label: <SVGIcon iconName='icon-unie65b' />,
-                field:'password'
+                field:'password',
+                rules:[
+                    {required: true, message: '请输入密码'},
+                    {pattern: /^\w{4,12}$/,message:'密码格式错误'}
+                ]
             },
         ];
         const ButtonParmas = {
@@ -49,7 +57,9 @@ class Login extends Component {
         };
         return(
             <div>
-                <ValidateForm  ButtonParmas = {ButtonParmas} InputParmas={InputParmas} />
+                <ValidateForm  ButtonParmas = {ButtonParmas}
+                               InputParmas={InputParmas}
+                               onSumbit={this.login} />
                 <Number />
             </div>
         )
