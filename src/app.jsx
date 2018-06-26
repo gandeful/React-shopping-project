@@ -5,7 +5,7 @@ import Login from './routes/account/login'
 
 const  App = () =>(
         <Router>
-            <div>
+            <div className={'full-screen'}>
                 <Route exact path="/" component={Login} />
                 <Route path="/home" component={Home} />
 
