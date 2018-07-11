@@ -42,7 +42,8 @@ module.exports = function override(config, env) {
         {
           loader: require.resolve('less-loader'),
           options: {
-            javascriptEnabled:true
+            javascriptEnabled:true,
+            modifyVars: { "@brand-primary": "#FF394B","@brand-primary-tap": "#DD1426" }
           },
         },
       ]

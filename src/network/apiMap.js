@@ -8,3 +8,9 @@ export const postShopSaleSumReport = {
     method:'post'
 
 }
+
+//采购订单列表
+export const postShopPurchaseList = {
+    url: '/api/PurchaseOrder/PostShopPurchaseList',
+    method: 'post'
+};

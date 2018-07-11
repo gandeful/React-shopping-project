@@ -5,6 +5,7 @@ import styles  from './styles.less';
 import {postShopSaleSumReport} from "../../../network/apiMap";
 import http from '@/network/index';
 
+
 const renderRow = (key,left,center,right) =>(
     <div key={key}>
         <WhiteSpace size="sm" />
@@ -17,25 +18,25 @@ const renderRow = (key,left,center,right) =>(
         </WingBlank>
     </div>
 )
-const icon = 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png';
+
 const data = [
     {
-        icon,
+        icon:'/切图/首页/销售@3x.png',
         text:'销售'
     },{
-        icon,
+        icon:'/切图/首页/采购@3x.png',
         text:'采购'
     },{
-        icon,
+        icon:'/切图/首页/入库@3x.png',
         text:'入库'
     },{
-        icon,
+        icon:'/切图/首页/商品管理@3x.png',
         text:'商品管理'
     },{
-        icon,
+        icon:'/切图/首页/库存管理@3x.png',
         text:'库存管理'
     },{
-        icon,
+        icon:'/切图/首页/报表@3x.png',
         text:'报表'
     }
 ];
@@ -77,12 +78,16 @@ class Shop extends Component {
                         mode="light"
                     >酒店名称</NavBar>
                     <WhiteSpace size="lg" />
+                    <div className={styles.shopwrapper}>
                     <WingBlank size="lg">
                         交易汇总
                     </WingBlank>
-                    {
-                        arr.map((v,i)=>(renderRow(i,...v)))
-                    }
+
+                        {
+                            arr.map((v,i)=>(renderRow(i,...v)))
+                        }
+                    </div>
+
                     <Grid className={styles.grid} data={data} onClick={this.onGridItemClick} activeStyle={false} columnNum={3} />
                 </div>
             </div>

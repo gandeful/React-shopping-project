@@ -27,12 +27,12 @@ class Home extends Component {
                 icon:<div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                background: 'url(/切图/标签栏/店铺未选中@3x.png) center center /  21px 21px no-repeat' }}
             />,
                 selectedIcon:<div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                background: 'url(/切图/标签栏/店铺选中@3x.png) center center /  21px 21px no-repeat' }}
             />,
                 component:Shop
 
@@ -43,12 +43,12 @@ class Home extends Component {
                 icon:<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(/切图/标签栏/采购未选中@3x.png) center center /  21px 21px no-repeat' }}
                 />,
                 selectedIcon:<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(/切图/标签栏/采购选中@3x.png) center center /  21px 21px no-repeat' }}
                 />,
                 component:Purchase
 
@@ -58,20 +58,20 @@ class Home extends Component {
                 icon:<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(/切图/标签栏/发现未选中@3x.png) center center /  21px 21px no-repeat' }}
                 />,
                 selectedIcon:  <div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(/切图/标签栏/发现选中@3x.png) center center /  21px 21px no-repeat' }}
                 />,
                 component:ShopCart
             },
             {
                 title:'我的',
                 key:'my',
-                icon:{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' },
-                selectedIcon:{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' },
+                icon:{ uri: '/切图/标签栏/我的未选中@3x.png' },
+                selectedIcon:{ uri: '/切图/标签栏/我的选中@3x.png' },
                 component:My
             },
         ]
